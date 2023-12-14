@@ -1,0 +1,95 @@
+.max-width .modal-body em {
+    font-style: normal;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #6C60FE;
+}
+
+.max-width-login .modal-body em {
+    font-style: normal;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #6C60FE;
+}
+
+
+.max-width {
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+.max-width-login {
+    max-width: 500px;
+    margin: 100px auto;
+}
+
+.max-width-login h4 {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+/* .signin,
+.login {
+    background-color: #F5F5F7;
+} */
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    padding: 23px 25px;
+    box-shadow: none;
+    outline: none;
+}
+
+input[type=radio]{
+    width: 20px;
+    height: 18px;
+    font-size: 40px;
+    color: #6C60FE;
+
+}
+
+form .input-group .input-group-prepend span {
+    background-color: #F5F5F7;
+    padding: 12px 15px;
+
+}
+
+form .input-group-prepend span i {
+    color: #141414;
+}
+
+.modal-footer a {
+    color: #6C60FE;
+}
+
+.form-group button {
+    background-color: #6C60FE;
+    color: #fff;
+    font-weight: 500;
+}
+
+.form-group button:hover {
+    background-color: #6C60FE;
+    color: #fff;
+    font-weight: 500;
+}
+
+.form-group button:focus {
+    background-color: #6C60FE;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0px;
+    border: 2px solid rgb(156, 156, 253);
+    background-color: #d6d2fd;
+    color: #6152fb;
+    max-width: 450px;
+    margin: 15px  auto;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    
+}

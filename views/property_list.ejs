@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PGs in delhi</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito&family=Lato&family=Nanum+Gothic+Coding&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/property_list.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--------------------------------header------------------------>
+    <div class="header sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" href="/">
+                <!-- <img src="img/logo.png" /> -->
+                PG<em>life</em>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="my-navbar">
+                <ul class="navbar-nav">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <img src="img\home_263115.png" class="pb-2" style="width: 23px;"></img>
+                                <span>Home</span>
+                            </a>
+                        </li>
+
+                        <div class="nav-vl"></div>
+
+                        <% if (locals.user) { %>
+                            <div class="nav-name">
+                                Hii , <%= locals.user.fullname %>
+                            </div>
+
+                            <li class="nav-item">
+                                <a class="nav-link pt-2" href="/dashboard">
+                                    <img src="img\profile-user_64572.png" style="width: 25px;"></img>
+                                    <span>profile</span>
+                                </a>
+                            </li>
+
+                            <div class="nav-vl"></div>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="\logout">
+                                    <img src="img\logout_1828427.png" style="width: 23px;"></img> <span>Logout</span>
+                                </a>
+                            </li>
+
+                            <% } else { %>
+
+                                <!-- <div class="nav-vl"></div>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/signin">
+                                        <img src="img/houses_3326006.png" class="pt-1" style="width: 23px;"></img>
+                                        <span class="pt-5">list your property</span>
+                                    </a>
+                                </li> -->
+
+                                <!-- <div class="nav-vl"></div> -->
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/signin">
+                                        <!-- data-toggle="modal" data-target="#signup-modal" -->
+                                        <img src="img\add-contact_3979399.png" style="width: 27px;"></img> <span
+                                            class="pt-3">signin</span>
+                                    </a>
+                                </li>
+
+                                <div class="nav-vl"></div>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/login">
+                                        <img src="img\man-avatar_3954071 (1).png" class="pt-1"
+                                            style="width: 22px;"></img>
+                                        <span>login</span>
+                                    </a>
+                                </li>
+
+                                <!-- <div class="nav-vl"></div>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/dashboard">
+                                        <img src="img\profile-user_64572.png" style="width: 27px;"></img> <span
+                                            class="pt-3">profile</span>
+                                    </a>
+                                </li> -->
+
+                                <% } %>
+                    </ul>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <!--------------------------loading----------------->
+    <div id="loading">
+    </div>
+
+
+
+
+    <div class="search-section">
+        <div class="max-width">
+            <form action="/search" method="GET" id="search-form">
+                <div class="input-group city-search">
+                    <input type="text" class="form-control input-city px-3 py-4" id='city' name="city"
+                        placeholder="Enter your city to search for PGs" />
+                    <div class="input-group-append">
+                        <button type="submit" class="btn">
+                            <i class="fa fa-search"></i> search
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-----------------------------------------breadcrumb---------------------->
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb py-2">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                PG's in delhi
+            </li>
+        </ol>
+    </nav>
+
+
+
+    <!----------------------------------property list------------------------->
+    <div class="page-container">
+        <div class="filter-bar row justify-content-around">
+            <div class="col-auto" data-toggle="modal" data-target="#filter-modal">
+                <img src="img/filter.png" alt="filter" />
+                <span>Filter</span>
+            </div>
+            <div class="col-auto">
+                <img src="img/desc.png" alt="sort-desc" id="high" />
+                <span>Highest rent first</span>
+            </div>
+            <div class="col-auto">
+                <img src="img/asc.png" alt="sort-asc" id="low" />
+                <span>Lowest rent first</span>
+            </div>
+        </div>
+        <% Object.keys(cityProperties).forEach(city=> { %>
+            <% const cityPropertiesArray=cityProperties[city]; %>
+                <% if (Array.isArray(cityPropertiesArray)) { %>
+                    <% cityPropertiesArray.forEach(property=> { %>
+                        <div class="property-card row">
+                            <div class="image-container col-md-4">
+                                <img src="<%= property.propertyimg %>" />
+                            </div>
+                            <div class="content-container col-md-8">
+                                <div class="row no-gutters justify-content-between">
+                                    <div class="star-container" title="3.5">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="interested-container">
+                                        <i class="far fa-heart"></i>
+                                        <div class="interested-text">
+                                            <%= property.interestedCount %> interested
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="detail-container">
+                                    <div class="property-name">
+                                        <%= property.name %>
+                                    </div>
+                                    <div class="property-address"><img src="img/amenities/pin_927667.png"
+                                            style="width: 17px;" alt="">
+                                        <%= property.address %>
+                                    </div>
+                                    <div class="property-gender">
+                                        <img src="<%= property.img %>" /><span>
+                                            <%=property.gender%>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row no-gutters">
+                                    <div class="rent-container col-6">
+                                        <div class="rent"><i class="fas fa-solid fa-indian-rupee-sign"></i>
+                                            <%= property.price %>
+                                        </div>
+                                        <div class="rent-unit">per month</div>
+                                    </div>
+                                    <div class="button-container col-6">
+                                        <a href="/property_detail/<%=city%>/<%=property.id %>"
+                                            class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                            <% } else { %>
+                                <div>
+                                    <p>
+                                        city does not exist in our records still...
+                                        Our network is growing at fast pace, and soon we will have our leads city.
+                                    </p>
+                                </div>
+                                <% } %>
+                                    <% }); %>
+
+
+    </div>
+
+
+
+    <!------------------------------------filter modal--------------------------->
+    <div class="modal fade" id="filter-modal" tabindex="-1" role="dialog" aria-labelledby="filter-heading"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="filter-heading">Filters</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <h5>What kind of pg your are looking for </h5>
+                    <hr />
+                    <div>
+                        <button class="btn btn-outline-dark">
+                            <i class="fas fa-venus-mars"></i> male
+                        </button>
+                        <button class="btn btn-outline-dark">
+                            <i class="fas fa-mars"></i>female
+                        </button>
+                        <button class="btn btn-outline-dark">
+                            <i class="fas fa-venus"></i> Unisex
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn ">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!----------------------------------------------footer---------------------------->
+    <div class="footer">
+        <div class=" footer-container">
+            <div class="footer-cities">
+                <div class="footer-city">
+                    <a href="/property_list">PG in Delhi</a>
+                </div>
+                <div class="footer-city">
+                    <a href="/property_list">PG in Mumbai</a>
+                </div>
+                <div class="footer-city">
+                    <a href="/property_list">PG in Hyderabad</a>
+                </div>
+                <div class="footer-city">
+                    <a href="/property_list">PG in Bangalore</a>
+                </div>
+                <div class="footer-city">
+                    <a href="/property_list">PG in chennai</a>
+                </div>
+            </div>
+            <div class="footer-copyright">© 2020 Copyright PG Life </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/property_list.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

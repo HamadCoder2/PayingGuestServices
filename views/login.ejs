@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PG Life | login</title>
+    <link rel="icon" href="img/favicon.ico">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito&family=Lato&family=Nanum+Gothic+Coding&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/loginandsignup.css">
+</head>
+
+<body>
+    <!--------------------------------header------------------------>
+    <div class="header sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" href="/">
+                <!-- <img src="img/logo.png" /> -->
+                PG<em>life</em>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="my-navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signin">
+                            <!-- data-toggle="modal" data-target="#signup-modal" -->
+                            <img src="img\add-contact_3979399.png" style="width: 30px;"></img> <span>signin</span>
+                        </a>
+                    </li>
+
+                    <div class="nav-vl"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">
+                            <img src="img/man-avatar_3954071 (1).png" class="pt-1" style="width: 24px;"></img>
+                            <span>login</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <% if (messages.error && messages.error.length> 0) { %>
+        <div class="error-message text-center">
+            <%= messages.error[0] %>
+        </div>
+        <% } %>
+
+
+            <section class="login">
+
+                <div class="max-width-login">
+
+                    <div class="modal-body">
+                        <h4 class="text-left pb-3">login to PG<em>life</em></h4>
+                        <form action="/login" method="POST">
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                                <input type="email" class="form-control" name="username" placeholder="Email" required>
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                    minlength="6" required>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" value="submit" class="btn btn-block ">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <span>
+                            <a href="/signin">Click here</a>
+                            to register a new account
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!----------------------------------------footer----------------- -->
+            <div class="footer">
+                <div class=" footer-container">
+                    <div class="footer-cities">
+                        <div class="footer-city">
+                            <a href="/property_list">PG in Delhi</a>
+                        </div>
+                        <div class="footer-city">
+                            <a href="/property_list">PG in Mumbai</a>
+                        </div>
+                        <div class="footer-city">
+                            <a href="/property_list">PG in Hyderabad</a>
+                        </div>
+                        <div class="footer-city">
+                            <a href="/property_list">PG in Bangalore</a>
+                        </div>
+                        <div class="footer-city">
+                            <a href="/property_list">PG in chennai</a>
+                        </div>
+                    </div>
+                    <div class="footer-copyright">© 2020 Copyright PG Life </div>
+                </div>
+            </div>
+
+
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+
+</html>

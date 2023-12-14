@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome | PG Life</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabarito&family=Lato&family=Nanum+Gothic+Coding&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/css/editpage.css" />
+    <link rel="stylesheet" type="text/css" href="/css/loginandsignup.css" />
+</head>
+
+<body>
+    <!--------------------------------header------------------------>
+    <div class="header sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <a class="navbar-brand" href="/">
+                PG<em>life</em>
+            </a>
+            <button class="navbar-toggler fs-2" type="button" data-toggle="collapse" data-target="#my-navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="my-navbar">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                             <span>Back</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="edit-max">
+        <h2>Edit your profile</h2>
+        <form action="/edit/<%=user._id %>" method="POST">
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-user"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" name="fullname" value="<%=user.fullname%>"
+                    placeholder="FullName" maxlength="30" required>
+            </div>
+
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </div>
+                <input type="email" class="form-control" name="email" value="<%= user.email%>" placeholder="Email"
+                    required>
+            </div>
+
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-phone-alt"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" name="phone" value="<%= user.phone %>"
+                    placeholder="Phone Number" maxlength="10" minlength="10" required>
+            </div>
+
+            <div class="form-group">
+                <span>I'm a</span>
+                <input type="radio" class="ml-3" id="gender-male" name="gender" value="male" <%= user.gender === 'male' ? 'checked' : '' %> required />
+                Male
+                <label for="gender-male">
+                </label>
+                <input type="radio" class="ml-3" id="gender-female" name="gender" value="female" <%= user.gender === 'female' ? 'checked' : '' %> required />
+                <label for="gender-female">
+                    Female
+                </label>
+                <input type="radio" class="ml-3" id="gender-male" name="gender" value="others" <%= user.gender === 'others' ? 'checked' : '' %> required />
+                others
+            </div>
+            <div class="form-group">
+                <button type="submit" value="submit" class="btn btn-block  p-2">Save profile</button>
+            </div>
+        </form>
+
+    </div>
+
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

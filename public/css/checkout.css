@@ -1,0 +1,36 @@
+* {
+
+    font-family: 'Poppins', sans-serif;
+    /* color: #6C60FE; */
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.btn {
+    background-color: #6C60FE;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+.btn:hover {
+    background-color: #6C60FE;
+    color: #fff;
+}
+
+.container .form-check .form-check-label {
+    color: #6C60FE;
+}
+
+@media (max-width:576px) {
+    .container main h2 {
+        font-size: 20px;
+    }
+
+    .col-lg-8 {
+        margin-top: 22px;
+    }
+}

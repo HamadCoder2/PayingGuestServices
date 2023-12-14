@@ -1,0 +1,13 @@
+.edit-max{
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+.edit-max h2{
+    font-size: 21px;
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
