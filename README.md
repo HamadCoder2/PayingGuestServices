@@ -1,4 +1,4 @@
-# PGlife Project
+# PGlife 
 PGlife is a web application designed to simplify and enhance the experience of finding and managing rental properties for individuals, 
 
 ## Live Demo
@@ -28,9 +28,9 @@ This project uses Passport.js middleware for authentication.
 This project uses MongoDB as the database, and Mongoose as the ODM (Object Data Modeling) library.
 
 ## Screenshots
-![Screenshot 1]("img/Screenshot 2023-11-30 120236.png")
+![Screenshot 1]("public/img/Screenshot 2023-11-30 120236.png")
 
-![Screenshot 2]("img/pglifemainimage.png")
+![Screenshot 2]("public/img/pglifemainimage.png")
 
 
 
