@@ -15,7 +15,11 @@ Check out the live demo of PGlife [here](https://pglife-59s9.onrender.com/).
 - Mongoose
 
 ## Usage
-if you download this project open in vscode and write this command nodemon src/server.js or node src/server.js 
+if you download this project open in vscode and write this command nodemon src/server.js or node src/server.js in terminal 
+if you have this error 
+Error: listen EADDRINUSE: address already in use :::3000
+the use this command npx kill-port 3000 or any port 
+then  write this command nodemon src/server.js or node src/server.js 
 
 ## Authentication and Authorization
 This project uses Passport.js middleware for authentication.
@@ -26,7 +30,7 @@ This project uses MongoDB as the database, and Mongoose as the ODM (Object Data 
 ## Screenshots
 ![Screenshot 1]("img/Screenshot 2023-11-30 120236.png")
 
-![Screenshot 1]("img/pglifemainimage.png")
+![Screenshot 2]("img/pglifemainimage.png")
 
 
 
