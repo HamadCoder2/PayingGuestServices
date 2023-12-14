@@ -28,9 +28,9 @@ This project uses Passport.js middleware for authentication.
 This project uses MongoDB as the database, and Mongoose as the ODM (Object Data Modeling) library.
 
 ## Screenshots
-![Screenshot 1]("pglife\public\img\Screenshot 2023-11-30 120236.png"")
+![PGlife Screenshot]("img/Screenshot 2023-11-30 120236.png")
 
-![Screenshot 2]("img/pglifemainimage.png")
+![PGlife Screenshot]("img/pglifemainimage.png")
 
 
 
